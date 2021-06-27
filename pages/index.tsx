@@ -1,7 +1,3 @@
-import React from "react";
-
-const index = (): JSX.Element => {
-  return <div>Hello world</div>;
-};
+const index = (): JSX.Element => <div></div>;
 
 export default index;
