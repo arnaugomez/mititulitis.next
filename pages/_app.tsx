@@ -1,11 +1,14 @@
 import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
+import AxiosProvider from "../common/data/AxiosProvider";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <RecoilRoot>
-      <Component {...pageProps} />
-    </RecoilRoot>
+    <AxiosProvider>
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
+    </AxiosProvider>
   );
 }
 
