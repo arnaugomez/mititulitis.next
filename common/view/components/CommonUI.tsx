@@ -8,7 +8,9 @@ interface CommonUIProps {
 const CommonUI = ({ children }: CommonUIProps): JSX.Element => (
   <>
     <Header />
-    <main className="p-4">{children}</main>
+    <main className="p-4 bg-gradient-to-bl from-stone-100 to-stone-200">
+      {children}
+    </main>
   </>
 );
 
