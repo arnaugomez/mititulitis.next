@@ -1,6 +1,5 @@
 import LatestPosts from "../post/view/LatestPosts";
 import MaxWidth from "../common/view/atoms/MaxWidth";
-import Button from "../common/view/atoms/Button";
 import TripticLayout from "../common/view/atoms/TripticLayout";
 import AsideLoginRegister from "../user/view/AsideLoginRegister";
 import RightSidebar from "../common/view/components/RightSidebar";
