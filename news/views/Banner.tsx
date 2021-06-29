@@ -4,13 +4,27 @@ import sphereImg from "../../public/assets/imgs/3d-sphere.png";
 import coinImg from "../../public/assets/imgs/3d-coin.png";
 import thorusImg from "../../public/assets/imgs/3d-thorus.png";
 import { useEmblaCarousel } from "embla-carousel/react";
+import { useEffect, useState } from "react";
 
 const Banner = (): JSX.Element => {
-  const [emblaRef] = useEmblaCarousel();
+  const [page, setPage] = useState<number>(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  useEffect(() => {
+    let timeOut;
+    if (emblaApi) {
+      timeOut = setTimeout(() => {
+        emblaApi.scrollNext();
+        setPage(emblaApi.selectedScrollSnap());
+      }, 6000);
+    }
+    return () => clearTimeout(timeOut);
+  }, [emblaApi, page, setPage]);
+
   return (
     <div className="max-w-full overflow-hidden" ref={emblaRef}>
-      <section className="w-full h-52 flex items-stretch space-x-4">
-        <article className="embla__slide rounded-xl border border-wine-red bg-wine-red-100 relative">
+      <section className="w-full h-52 flex items-stretch">
+        <article className="embla__slide rounded-xl border border-wine-red bg-wine-red-100 relative mr-4">
           <div className="absolute inset-0 py-4 px-5 flex">
             <div className="flex-1">
               <h2 className="text-wine-red-800 mt-0">Que nada te pare</h2>
@@ -30,7 +44,7 @@ const Banner = (): JSX.Element => {
             </div>
           </div>
         </article>
-        <article className="embla__slide rounded-xl border border-straw-700 bg-straw-100 py-4 px-5 flex">
+        <article className="embla__slide rounded-xl border border-straw-700 bg-straw-100 py-4 px-5 flex mr-4">
           <div className="flex-1">
             <h2 className="text-straw-900 mt-0">Premium de por vida</h2>
             <p>
