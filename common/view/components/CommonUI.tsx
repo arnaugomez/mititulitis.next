@@ -8,7 +8,7 @@ interface CommonUIProps {
 const CommonUI = ({ children }: CommonUIProps): JSX.Element => (
   <>
     <Header />
-    {children}
+    <main className="p-4">{children}</main>
   </>
 );
 

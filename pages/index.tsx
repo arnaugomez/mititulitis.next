@@ -1,5 +1,6 @@
 import LatestPosts from "../post/view/LatestPosts";
 import MaxWidth from "../common/view/atoms/MaxWidth";
+import Button from "../common/view/atoms/Button";
 
 const index = (): JSX.Element => (
   <MaxWidth>
@@ -32,6 +33,7 @@ const index = (): JSX.Element => (
       tempora, voluptatem voluptatum? Culpa distinctio doloremque illum iure
       obcaecati veritatis.
     </p>
+    <Button variant="primary">Eric Goodlow</Button>
   </MaxWidth>
 );
 
