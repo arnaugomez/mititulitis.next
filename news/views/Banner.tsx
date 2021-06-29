@@ -7,19 +7,17 @@ import { useEmblaCarousel } from "embla-carousel/react";
 import { useEffect, useState } from "react";
 
 const Banner = (): JSX.Element => {
-  const [page, setPage] = useState<number>(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   useEffect(() => {
     let timeOut;
     if (emblaApi) {
-      timeOut = setTimeout(() => {
+      timeOut = setInterval(() => {
         emblaApi.scrollNext();
-        setPage(emblaApi.selectedScrollSnap());
       }, 6000);
     }
-    return () => clearTimeout(timeOut);
-  }, [emblaApi, page, setPage]);
+    return () => clearInterval(timeOut);
+  }, [emblaApi]);
 
   return (
     <div className="max-w-full overflow-hidden" ref={emblaRef}>
@@ -59,6 +57,26 @@ const Banner = (): JSX.Element => {
             </div>
             <div className="absolute left-0 w-20 animation-float--delay right-2 top-2">
               <Image src={coinImg} alt="" />
+            </div>
+          </div>
+        </article>
+        <article className="embla__slide rounded-xl border border-wine-red bg-wine-red-100 relative mr-4">
+          <div className="absolute inset-0 py-4 px-5 flex">
+            <div className="flex-1">
+              <h2 className="text-wine-red-800 mt-0">Que nada te pare</h2>
+              <p className="">
+                Sacarse un título, aprender un idioma, tocar un instrumento...
+                aquí encontrarás los recursos que necesitas para conseguirlo, y
+                la comunidad para seguir motivado cada día.
+              </p>
+            </div>
+            <div className="flex-none w-48 relative">
+              <div className="absolute left-0 w-20 animation-float--delay right-0 top-2">
+                <Image src={sphereImg} alt="" />
+              </div>
+              <div className="absolute right-0 w-36 animation-float right-0 top-6">
+                <Image src={helixImg} alt="" />
+              </div>
             </div>
           </div>
         </article>
