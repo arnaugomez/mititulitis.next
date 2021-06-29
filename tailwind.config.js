@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        display: ["Rubik", "sans-serif"],
+      },
       colors: {
         stone: {
           50: "#f6f6f7",
@@ -40,7 +44,7 @@ module.exports = {
           800: "#827658",
           900: "#6a6148",
         },
-        "camo-green": {
+        camo: {
           50: "#f8f9f7",
           100: "#f1f2ef",
           200: "#dbe0d7",

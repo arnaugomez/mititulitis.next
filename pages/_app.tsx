@@ -1,12 +1,15 @@
 import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
 import AxiosProvider from "../common/data/AxiosProvider";
+import CommonUI from "../common/view/components/CommonUI";
 
 function MyApp({ Component, pageProps }) {
   return (
     <AxiosProvider>
       <RecoilRoot>
-        <Component {...pageProps} />
+        <CommonUI>
+          <Component {...pageProps} />
+        </CommonUI>
       </RecoilRoot>
     </AxiosProvider>
   );
