@@ -11,9 +11,9 @@ const TripticLayout = ({
   left,
   right,
 }: TripticLayoutProps): JSX.Element => (
-  <div className="flex space-x-4">
+  <div className="flex pb-20">
     {left && <div className="flex-none w-40">{left}</div>}
-    <div className="flex-1">{children}</div>
+    <div className="flex-1 space-y-7">{children}</div>
     {right && <div className="flex-none w-40">{right}</div>}
   </div>
 );

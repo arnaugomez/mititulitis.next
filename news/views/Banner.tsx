@@ -23,7 +23,7 @@ const Banner = (): JSX.Element => {
 
   return (
     <div className="max-w-full overflow-hidden" ref={emblaRef}>
-      <section className="w-full h-52 flex items-stretch">
+      <section className="w-full h-52 flex items-stretch px-4">
         <article className="embla__slide rounded-xl border border-wine-red bg-wine-red-100 relative mr-4">
           <div className="absolute inset-0 py-4 px-5 flex">
             <div className="flex-1">
