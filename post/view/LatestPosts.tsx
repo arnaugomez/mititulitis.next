@@ -1,6 +1,7 @@
 import { usePostsStore } from "../domain/usePostsStore";
 import { useEffect } from "react";
 import PostTeaser from "./PostTeaser";
+
 const LatestPosts = (): JSX.Element => {
   const { latestPosts, getLatestPosts } = usePostsStore();
 
@@ -11,7 +12,7 @@ const LatestPosts = (): JSX.Element => {
 
   if (latestPosts) {
     return (
-      <section className="px-4 space-y-4">
+      <section className="px-5 space-y-4">
         <div className="px-4 flex items-baseline">
           <h2 className="text-stone-800 mt-0 text-2xl">Latest posts</h2>
           {/*TODO: add share icons*/}
